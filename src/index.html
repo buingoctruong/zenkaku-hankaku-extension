@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENKAKU HANKAKU Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Form Component -->
+        <div class="form-component">
+            <label for="inputText">The Text to Convert</label>
+            <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        </div>
+
+        <!-- Conversion Table Component -->
+        <div class="table-component">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Conversion Result to Zenkaku</th>
+                        <th>Conversion Result to Hankaku</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><textarea id="zenkakuResult" readonly></textarea></td>
+                        <td><textarea id="hankakuResult" readonly></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="popup.js" type="module"></script>
+</body>
+</html>
