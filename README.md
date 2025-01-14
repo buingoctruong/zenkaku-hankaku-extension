@@ -44,7 +44,11 @@ This lightweight and user-friendly tool allows you to perform real-time conversi
 
 ## 📜 Scripts
 
-`npm run start`: Starts the development server with Parcel.
+Starts the development server with Parcel.
+
+```bash
+npm run start
+```
 
 ## 🔗 Dependencies
 
