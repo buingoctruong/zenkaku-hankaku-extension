@@ -6,6 +6,14 @@ This lightweight and user-friendly tool allows you to perform real-time conversi
 
 ---
 
+## 📝 Medium Article
+
+Check out my article on Medium: 
+
+## 🌐 Extension
+
+Find and add the ***ZENKAKU HANKAKU Converter*** Extension to your Chrome [here](https://chromewebstore.google.com/detail/zenkaku-hankaku-converter/olgeeoaipkkmncidfopkldngijngakkd?authuser=0&hl=en)
+
 ## 🚀 Features
 
 - **Real-time Conversion**: Automatically converts text to Zenkaku and Hankaku as you type.
@@ -14,7 +22,7 @@ This lightweight and user-friendly tool allows you to perform real-time conversi
 
 ---
 
-## 📥 Installation
+## 📥 Local Installation
 
 1. Clone or download this repository:
    ```bash
