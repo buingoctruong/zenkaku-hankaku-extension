@@ -8,7 +8,7 @@ This lightweight and user-friendly tool allows you to perform real-time conversi
 
 ## 📝 Medium Article
 
-Check out my article on Medium: 
+Check out my article on Medium: https://medium.com/@truongbui95/building-the-zenkaku-hankaku-converter-chrome-extension-a-developers-journey-e036d5dbd350
 
 ## 🌐 Extension
 
