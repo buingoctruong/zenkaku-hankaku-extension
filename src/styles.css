@@ -1,63 +1,85 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
-    width: 700px;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f4f7fc, #e0e7ff);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
+/* Container */
 .container {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
     width: 100%;
-    max-width: 700px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* App Title and Description */
+.app-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: #2a2a2a;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.app-description {
+    text-align: center;
+    color: #6c6c6c;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Form Component */
 .form-component {
-    position: relative; /* Allow absolute positioning inside */
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 15px;  /* Curved border */
-    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    background-color: #f4f9fe;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Border Label */
 .border-label {
-    position: absolute;
-    top: -12px;   /* Move label outside the form component */
-    left: 7px;  /* Align label to the left of the form component */
+    display: block;
     font-weight: bold;
-    font-size: 16px;
-    background-color: #fff;
-    padding: 0 5px;
-    border-radius: 5px;
-    color: #333;
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
+/* Textarea */
 textarea {
     width: 100%;
-    height: 150px;
+    height: 120px;
     resize: none;
+    padding: 12px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 8px;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
 textarea[readonly] {
@@ -65,65 +87,114 @@ textarea[readonly] {
     cursor: not-allowed;
 }
 
-/* Conversion Options Styling */
+textarea:focus {
+    border-color: #5e7fd2;
+    box-shadow: 0 0 5px rgba(94, 127, 210, 0.6);
+}
+
+/* Conversion Options */
 .conversion-options {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .character-type-component,
 .space-conversion-component {
-    width: 48%;
+    flex: 1;
+    margin-right: 50px;
 }
 
-.character-type-component label,
-.space-conversion-component label {
-    display: inline-block;
-    margin-right: 15px;
+.space-conversion-component {
+    margin-right: 0;
 }
 
+/* Radio Groups */
 .radio-group {
     display: flex;
-    padding-top: 5px;
-    gap: 1rem; /* Add spacing between the radio buttons */
+    gap: 20px;
+    margin-top: 12px;
 }
 
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #444;
+    gap: 8px;
+}
+
+.radio-group input {
+    margin-top: 3px;
+}
+
+/* Table Component */
 .table-component {
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.table-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 th, td {
-    padding: 12px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
     font-size: 1rem;
 }
 
 th {
-    background-color: #f1f1f1;
-    text-align: center;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #5e7fd2;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 td {
-    color: #555;
-    text-align: left;
+    background-color: #f9f9f9;
 }
 
-th.separator, td.separator {
-    border-left: 2px solid #ccc;
-    padding-left: 20px;
+td textarea {
+    background-color: #f1f1f1;
+    font-size: 1rem;
+    border: none;
+    padding: 12px;
 }
 
-table td, table th {
-    border-right: 1px solid #ccc;
+/* Button Styles (if any button exists in the future) */
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #5e7fd2;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a68b3;
+    transform: scale(1.05);
+}
+
+/* Add some spacing between elements */
+.margin-top {
+    margin-top: 25px;
+}
+
+.margin-bottom {
+    margin-bottom: 25px;
 }

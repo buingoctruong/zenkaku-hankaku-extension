@@ -8,12 +8,16 @@
 </head>
 <body>
     <div class="container">
+        <!-- Title -->
+        <h1 class="app-title">ZENKAKU HANKAKU Converter</h1>
+        <p class="app-description">Easily convert text between ZENKAKU and HANKAKU formats with flexible options for character types and spaces.</p>
+
         <!-- Form Component -->
         <div class="form-component">
             <label for="inputText" class="border-label">The Text to Convert</label>
             <textarea id="inputText" placeholder="Enter your text here..."></textarea>
 
-            <!-- Character Type and Space Conversion Components -->
+            <!-- Conversion Options -->
             <div class="conversion-options">
                 <!-- Character Type Component -->
                 <div class="character-type-component">
@@ -45,11 +49,12 @@
 
         <!-- Conversion Table Component -->
         <div class="table-component">
+            <h2 class="table-title">Conversion Results</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Conversion Result to Zenkaku</th>
-                        <th>Conversion Result to Hankaku</th>
+                        <th>ZENKAKU Result</th>
+                        <th>HANKAKU Result</th>
                     </tr>
                 </thead>
                 <tbody>
