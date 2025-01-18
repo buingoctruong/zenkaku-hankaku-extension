@@ -26,16 +26,24 @@ body {
 }
 
 .form-component {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
   margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
 }
 
-label {
+.border-label {
   color: #333;
-  margin-bottom: 10px;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 5px;
+  font-size: 16px;
   font-weight: bold;
-  display: block;
+  position: absolute;
+  top: -12px;
+  left: 7px;
 }
 
 textarea {
@@ -55,6 +63,28 @@ textarea {
 textarea[readonly] {
   cursor: not-allowed;
   background-color: #e9e9e9;
+}
+
+.conversion-options {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 10px;
+  display: flex;
+}
+
+.character-type-component, .space-conversion-component {
+  width: 48%;
+}
+
+.character-type-component label, .space-conversion-component label {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.radio-group {
+  gap: 1rem;
+  padding-top: 5px;
+  display: flex;
 }
 
 .table-component {

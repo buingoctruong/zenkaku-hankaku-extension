@@ -10,8 +10,37 @@
     <div class="container">
         <!-- Form Component -->
         <div class="form-component">
-            <label for="inputText">The Text to Convert</label>
+            <label for="inputText" class="border-label">The Text to Convert</label>
             <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+
+            <!-- Character Type and Space Conversion Components -->
+            <div class="conversion-options">
+                <!-- Character Type Component -->
+                <div class="character-type-component">
+                    <label class="section-title">Type of Characters to Convert</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="characterType" value="english" checked> Alphanumeric
+                        </label>
+                        <label>
+                            <input type="radio" name="characterType" value="kana"> Kana
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Space Conversion Component -->
+                <div class="space-conversion-component">
+                    <label class="section-title">Convert Space Type</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="spaceConversion" value="hankaku-space" checked> Hankaku
+                        </label>
+                        <label>
+                            <input type="radio" name="spaceConversion" value="zenkaku-space"> Zenkaku
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Conversion Table Component -->

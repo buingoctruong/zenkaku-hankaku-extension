@@ -603,12 +603,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputText = document.getElementById('inputText');
     const zenkakuResult = document.getElementById('zenkakuResult');
     const hankakuResult = document.getElementById('hankakuResult');
-    inputText.addEventListener('input', function() {
-        const zenkakuText = (0, _mojiDefault.default)(inputText.value).convert('HE', 'ZE').toString();
-        zenkakuResult.textContent = zenkakuText;
-        const hankakuText = (0, _mojiDefault.default)(inputText.value).convert('ZE', 'HE').toString();
-        hankakuResult.textContent = hankakuText;
-    });
+    const characterTypeRadios = document.getElementsByName('characterType'); // For character type
+    const spaceConversionRadios = document.getElementsByName('spaceConversion'); // For space conversion
+    // Add listeners for input and changes
+    inputText.addEventListener('input', updateConversion);
+    characterTypeRadios.forEach((radio)=>radio.addEventListener('change', updateConversion));
+    spaceConversionRadios.forEach((radio)=>radio.addEventListener('change', updateConversion));
+    function updateConversion() {
+        const text = inputText.value;
+        const characterType = getSelectedValue(characterTypeRadios); // "english" or "kana"
+        const spaceConversion = getSelectedValue(spaceConversionRadios); // "hankaku-space" or "zenkaku-space"
+        let zenkakuText = text;
+        let hankakuText = text;
+        // Convert text based on character type
+        if (characterType === 'english') {
+            zenkakuText = (0, _mojiDefault.default)(text).convert('HE', 'ZE').toString();
+            hankakuText = (0, _mojiDefault.default)(text).convert('ZE', 'HE').toString();
+        } else if (characterType === 'kana') {
+            zenkakuText = (0, _mojiDefault.default)(text).convert('HK', 'ZK').toString();
+            hankakuText = (0, _mojiDefault.default)(text).convert('ZK', 'HK').toString();
+        }
+        // Apply space conversion if needed
+        if (spaceConversion === 'zenkaku-space') {
+            zenkakuText = (0, _mojiDefault.default)(zenkakuText).convert('HS', 'ZS').toString();
+            hankakuText = (0, _mojiDefault.default)(hankakuText).convert('HS', 'ZS').toString();
+        } else if (spaceConversion === 'hankaku-space') {
+            zenkakuText = (0, _mojiDefault.default)(zenkakuText).convert('ZS', 'HS').toString();
+            hankakuText = (0, _mojiDefault.default)(hankakuText).convert('ZS', 'HS').toString();
+        }
+        // Update result areas
+        zenkakuResult.value = zenkakuText;
+        hankakuResult.value = hankakuText;
+    }
+    function getSelectedValue(radioButtons) {
+        for (const radio of radioButtons){
+            if (radio.checked) return radio.value;
+        }
+        return null;
+    }
 });
 
 },{"moji":"2YCbX","@parcel/transformer-js/src/esmodule-helpers.js":"kgk3g"}],"2YCbX":[function(require,module,exports,__globalThis) {

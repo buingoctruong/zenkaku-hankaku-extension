@@ -18,7 +18,6 @@ body {
 
 .container {
     width: 100%;
-    max-width: 100%;
     max-width: 700px;
     background-color: white;
     padding: 20px;
@@ -27,16 +26,24 @@ body {
 }
 
 .form-component {
+    position: relative; /* Allow absolute positioning inside */
     margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;  /* Curved border */
+    background-color: #fff;
 }
 
-label {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
+.border-label {
+    position: absolute;
+    top: -12px;   /* Move label outside the form component */
+    left: 7px;  /* Align label to the left of the form component */
     font-weight: bold;
+    font-size: 16px;
+    background-color: #fff;
+    padding: 0 5px;
+    border-radius: 5px;
     color: #333;
-    display: block;
-    margin-bottom: 10px;
 }
 
 textarea {
@@ -58,6 +65,31 @@ textarea[readonly] {
     cursor: not-allowed;
 }
 
+/* Conversion Options Styling */
+.conversion-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.character-type-component,
+.space-conversion-component {
+    width: 48%;
+}
+
+.character-type-component label,
+.space-conversion-component label {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.radio-group {
+    display: flex;
+    padding-top: 5px;
+    gap: 1rem; /* Add spacing between the radio buttons */
+}
+
 .table-component {
     margin-top: 20px;
 }
@@ -75,7 +107,7 @@ th, td {
 
 th {
     background-color: #f1f1f1;
-    text-align: center; 
+    text-align: center;
 }
 
 tr:nth-child(even) {
